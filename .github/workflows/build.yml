@@ -42,7 +42,7 @@ jobs:
           java-version: '17'
           distribution: 'zulu'
       - name: Validate Gradle wrapper
-        uses: gradle/wrapper-validation-action@859c33240bd026ce8d5f711f5adcc65c2f8eafc1
+        uses: gradle/wrapper-validation-action@6a97dac3d42665fcfd8ab72cb79024cd5dfd007d
       - name: Verify MariaDB connection
         run: |
             while ! mysqladmin ping -h"127.0.0.1" -P3306 ; do
