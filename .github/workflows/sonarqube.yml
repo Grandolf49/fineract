@@ -27,6 +27,6 @@ jobs:
           java-version: '17'
           distribution: 'zulu'
       - name: Validate Gradle wrapper
-        uses: gradle/wrapper-validation-action@859c33240bd026ce8d5f711f5adcc65c2f8eafc1
+        uses: gradle/wrapper-validation-action@9c75b4d3d1e1ab9cf779938de55702cde22cd29f
       - name: Sonarqube
         run: ./gradlew --no-daemon --console=plain -Dsonar.verbose=true -Dsonar.login=$SONAR_TOKEN -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.organization=$SONAR_ORGANIZATION --info -x rat -x test -x spotbugsMain -x spotbugsTest -x spotbugsGenerated -x licenseMain -x licenseTest -x checkstyleMain -x checkstyleTest --info --stacktrace build sonarqube
